@@ -38,16 +38,17 @@ export const cloudProps: Omit<ICloud, "children"> = {
 };
 
 export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
-  const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
-  const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
-  const minContrastRatio = theme === "dark" ? 2 : 1.2;
+  // 优化日间模式下的可见性，确保与页面背景有明显区分
+  const bgHex = theme === "light" ? "#e5e7eb" : "#1f2937"; // 日间模式使用浅灰色背景，与白色页面背景区分
+  const fallbackHex = theme === "light" ? "#111827" : "#ffffff"; // 日间模式使用深灰色图标，提高对比度
+  const minContrastRatio = theme === "dark" ? 3 : 5; // 进一步提高对比度要求
 
   return renderSimpleIcon({
     icon,
     bgHex,
     fallbackHex,
     minContrastRatio,
-    size: 42,
+    size: 56, // 增大图标尺寸，提高可见性
     aProps: {
       href: undefined,
       target: undefined,

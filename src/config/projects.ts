@@ -15,81 +15,61 @@ export type ActivityItemType = {
 }
 
 // Awards
-export const awardsHeadLine = "Awards & Honors"
-export const awardsIntro = "Recognition for academic and professional achievements."
+export const awardsHeadLine = "奖项与荣誉"
+export const awardsIntro = "个人获奖情况"
 
 export const awards: Array<ActivityItemType> = [
   {
-    name: 'Outstanding Teacher Award',
-    description: '',
-    date: '2024',
-    location: 'SCLS, Shanghai',
-  },
-  {
-    name: 'Zhui Ying Award',
-    description: '',
-    date: '2023',
-    location: 'Qingpu, Shanghai',
+    name: '"我梦见—楚天创客"大赛',
+    description: '省级铜奖',
+    date: '2025/7/3',
+    location: '',
   },
 ]
 
 // Research & Projects
-export const projectHeadLine = "Research & Projects"
-export const projectIntro = "Academic research and technical projects I've worked on."
+export const projectHeadLine = "项目经验"
+export const projectIntro = "参与的主要项目"
 
 export const projects: Array<ProjectItemType> = [
   {
-    name: 'Student Final Project Portfolio',
-    description: 'Static website portfolio',
-    link: { href: 'scls-cs.com', label: 'GitHub Cards' },
-    tags: ['Website', 'Next.js', 'TailwindCSS', 'DaisyUI', 'Portfolio']
+    name: '知伴 LearnMate',
+    description: '随着数字化教育需求的持续增长，为响应社会发展需求，我们创新性地推出了智能化在线学习平台。' +
+    '核心技术架构：Spring Boot、Spring cloud、Mybatis一plus、Mysql、Redis、Redisson、caffeine、RabbitMq、Xxl一job。'+
+    '主要工作：在项目中主要参与了学习服务和用户成长体系两个核心模块中的api开发并封装一个多级缓存组件。'+
+    '技术描述：断点续播、积分异步处理、实时排行榜、多级缓存。',
+    link: { href: '', label: '' },
+    tags: ['Spring Boot', 'Spring Cloud', 'MyBatis Plus', 'Redis', 'RabbitMQ', 'XXL-Job']
   },
   {
-    name: 'Seeking DNA',
-    description: '2022 SCLS Hackathon',
-    link: { href: 'https://scls-cs.gitbook.io/scls-apcs-lab/lab5-dna', label: 'Hackathon' },
-    tags: ['Hackathon', 'Java']
-  },
-  {
-    name: 'Texas Holdem Poker Judge',
-    description: '2024 SCLS Hackathon',
-    link: { href: 'https://onecompiler.com/challenges/42yf4n5yn/scls-hackathon', label: 'Hackathon' },
-    tags: ['Hackathon']
-  },
-  {
-    name: 'AI Camp Course Development',
-    description: 'Developed a comprehensive AI curriculum for high school students, incorporating real-world projects and startup concepts.',
-    link: { href: 'https://scls-cs.gitbook.io/ai-camp', label: 'View Course' },
-    tags: ['Education', 'AI']
+    name: '云味通订餐平台',
+    description: '包括系统管理后台和移动端应用两部分。管理后台供企业员工使用，可对餐厅分类、菜品、套餐、订单、员工等进行管理维护。移动端供消费者使用，可浏览菜品、添加购物车、下单等。技术栈：SpringBoot、Mybatis、MySQL、Redis、JWT、Nginx、Maven。主要工作：缓存设计、缓存穿透防护、用户认证、防重复下单、实时通信、构建管理。',
+    link: { href: '', label: '' },
+    tags: ['Spring Boot', 'MyBatis', 'MySQL', 'Redis', 'JWT', 'Nginx', 'Maven']
   },
 ]
 
 // Hobbies & Volunteer
-export const activitiesHeadLine = "Hobbies & Volunteer"
-export const activitiesIntro = "Personal interests and community contributions."
+export const activitiesHeadLine = "兴趣爱好"
+export const activitiesIntro = "个人兴趣爱好"
 
 export const activities: Array<ActivityItemType> = [
   {
-    name: 'Python Workshop',
-    description:
-      'Teaching basic Python programming concepts to beginners. Covering variables, control flow, and functions.',
-    date: '2024-02-24',
-    location: 'Shanghai',
-    link: 'https://example.com/python-workshop',
+    name: '热爱软件开发技术',
+    description: '追求极客精神，希望能够成长为一名优秀的程序员',
+    date: '',
+    location: '',
   },
   {
-    name: 'AI Ethics Discussion',
-    description:
-      'A group discussion about the ethical implications of AI development and its impact on society.',
-    date: '2024-03-01',
-    location: 'Shanghai',
-    link: 'https://example.com/ai-ethics',
+    name: '具有较好的沟通表达能力',
+    description: '在学校中，经常作为班级代表出席班级活动、校级活动，并收到大家和老师喜欢',
+    date: '',
+    location: '',
   },
   {
-    name: 'Code Review Session',
-    description:
-      'Helping students improve their coding skills through peer code review and best practices sharing.',
-    date: '2024-03-15',
-    location: 'Shanghai',
+    name: '喜欢体育运动',
+    description: '尤其是羽毛球,大一期间还参加过马拉松比赛,并成功完赛',
+    date: '',
+    location: '',
   },
 ]

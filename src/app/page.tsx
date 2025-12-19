@@ -1,21 +1,15 @@
 import { Container } from '@/components/layout/Container'
 import Newsletter from '@/components/home/Newsletter'
-import Career from '@/components/home/Career'
-import Education from '@/components/home/Education'
 import SocialLinks from '@/components/home/SocialLinks'
 import { headline, introduction } from '@/config/infoConfig'
-import { BlogCard } from '@/components/home/BlogCard'
-import { getAllBlogs, type BlogType } from '@/lib/blogs'
 import { ProjectCard } from '@/components/project/ProjectCard'
 import { ActivityCard } from '@/components/home/ActivityCard'
-import { projectHeadLine, projectIntro, projects, blogHeadLine, blogIntro, techIcons } from '@/config/infoConfig'
+import { projectHeadLine, projectIntro, projects, techIcons } from '@/config/infoConfig'
 import { awards, awardsHeadLine, awardsIntro, activities, activitiesHeadLine, activitiesIntro } from '@/config/projects'
 import IconCloud from "@/components/ui/icon-cloud"
-import { Award, Briefcase, Heart } from 'lucide-react'
+import { Award, Briefcase, Heart, Code } from 'lucide-react'
 
-export default async function Home() {
-  let blogList = (await getAllBlogs()).slice(0, 4)
-
+export default function Home() {
   return (
     <>
       <Container className="mt-9">
@@ -35,20 +29,113 @@ export default async function Home() {
           </div>
         </div>
 
-        {/* Awards */}
-        <div className="mx-auto flex flex-col max-w-xl gap-6 lg:max-w-none my-4 py-8 border-t border-muted">
-          <h2 className="flex flex-row items-center justify-start gap-2 text-xl font-semibold tracking-tight md:text-3xl opacity-80 mb-4">
-            <Award size={28}/>
-            {awardsHeadLine}
+        {/* Technical Skills */}
+        <div className="mx-auto flex flex-col max-w-xl gap-6 lg:max-w-none my-4 py-8 border-t border-gray-700">
+          <h2 className="flex flex-row items-center justify-start gap-2 text-xl font-semibold tracking-tight md:text-3xl opacity-100 mb-4 text-white">
+            <Code size={28}/>
+            技术栈展示
           </h2>
-          <ul
-            role="list"
-            className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3"
-          >
-            {awards.map((award) => (
-              <ActivityCard key={award.name} activity={award} titleAs='h3'/>
-            ))}
-          </ul>
+          
+          {/* Skills Categories */}
+          <div className="space-y-8">
+            {/* Backend Technologies */}
+            <div>
+              <h3 className="text-lg font-semibold text-blue-400 mb-4">后端技术</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                 {[
+                  { name: 'Java', proficiency: '熟悉' },
+                  { name: 'Spring Boot', proficiency: '熟悉' },
+                  { name: 'Spring Cloud', proficiency: '熟悉' },
+                  { name: 'Spring Security', proficiency: '熟悉' },
+                  { name: 'MyBatis/MyBatis Plus', proficiency: '熟悉' },
+                ].map((skill) => (
+                  <div key={skill.name} className="flex justify-between items-center p-3 rounded-lg border border-gray-700 bg-gray-800/50 hover:bg-gray-800 transition-all duration-200">
+                    <span className="text-sm font-medium text-white">{skill.name}</span>
+                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${skill.proficiency === '掌握' ? 'bg-green-500 text-white' : skill.proficiency === '熟悉' ? 'bg-blue-500 text-white' : 'bg-yellow-500 text-white'}`}>
+                      {skill.proficiency}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Database Technologies */}
+            <div>
+              <h3 className="text-lg font-semibold text-green-400 mb-4">数据库技术</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  { name: 'MySQL', proficiency: '熟悉' },
+                  { name: 'Redis', proficiency: '熟悉' },
+                ].map((skill) => (
+                  <div key={skill.name} className="flex justify-between items-center p-3 rounded-lg border border-gray-700 bg-gray-800/50 hover:bg-gray-800 transition-all duration-200">
+                    <span className="text-sm font-medium text-white">{skill.name}</span>
+                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${skill.proficiency === '掌握' ? 'bg-green-500 text-white' : skill.proficiency === '熟悉' ? 'bg-blue-500 text-white' : 'bg-yellow-500 text-white'}`}>
+                      {skill.proficiency}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Message Queue */}
+            <div>
+              <h3 className="text-lg font-semibold text-purple-400 mb-4">消息中间件</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  { name: 'RocketMQ', proficiency: '了解' },
+                  { name: 'RabbitMQ', proficiency: '掌握' },
+                ].map((skill) => (
+                  <div key={skill.name} className="flex justify-between items-center p-3 rounded-lg border border-gray-700 bg-gray-800/50 hover:bg-gray-800 transition-all duration-200">
+                    <span className="text-sm font-medium text-white">{skill.name}</span>
+                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${skill.proficiency === '掌握' ? 'bg-green-500 text-white' : skill.proficiency === '熟悉' ? 'bg-blue-500 text-white' : 'bg-yellow-500 text-white'}`}>
+                      {skill.proficiency}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Frontend Technologies */}
+            <div>
+              <h3 className="text-lg font-semibold text-teal-400 mb-4">前端技术</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  { name: 'Vue.js', proficiency: '熟悉' },
+                  { name: 'HTML/CSS3', proficiency: '熟悉' },
+                  { name: 'JavaScript', proficiency: '熟悉' },
+                  { name: 'Element Plus', proficiency: '掌握' },
+                ].map((skill) => (
+                  <div key={skill.name} className="flex justify-between items-center p-3 rounded-lg border border-gray-700 bg-gray-800/50 hover:bg-gray-800 transition-all duration-200">
+                    <span className="text-sm font-medium text-white">{skill.name}</span>
+                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${skill.proficiency === '掌握' ? 'bg-green-500 text-white' : skill.proficiency === '熟悉' ? 'bg-blue-500 text-white' : 'bg-yellow-500 text-white'}`}>
+                      {skill.proficiency}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* DevOps & Tools */}
+            <div>
+              <h3 className="text-lg font-semibold text-orange-400 mb-4">开发工具与运维</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  { name: 'Git', proficiency: '掌握' },
+                  { name: 'Docker', proficiency: '掌握' },
+                  { name: 'Nginx', proficiency: '熟悉' },
+                  { name: 'Linux', proficiency: '掌握' },
+                  { name: 'IDEA', proficiency: '熟悉' },
+                ].map((skill) => (
+                  <div key={skill.name} className="flex justify-between items-center p-3 rounded-lg border border-gray-700 bg-gray-800/50 hover:bg-gray-800 transition-all duration-200">
+                    <span className="text-sm font-medium text-white">{skill.name}</span>
+                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${skill.proficiency === '掌握' ? 'bg-green-500 text-white' : skill.proficiency === '熟悉' ? 'bg-blue-500 text-white' : 'bg-yellow-500 text-white'}`}>
+                      {skill.proficiency}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Research & Projects */}
@@ -89,29 +176,20 @@ export default async function Home() {
           </ul>
         </div>
 
-        {/* Blog Section */}
-        <div className="mx-auto flex flex-col max-w-xl gap-6 py-8 my-8 lg:max-w-none border-t border-muted">
+        {/* Awards */}
+        <div className="mx-auto flex flex-col max-w-xl gap-6 lg:max-w-none my-4 py-8 border-t border-muted">
           <h2 className="flex flex-row items-center justify-start gap-2 text-xl font-semibold tracking-tight md:text-3xl opacity-80 mb-4">
-            {blogHeadLine}
+            <Award size={28}/>
+            {awardsHeadLine}
           </h2>
-          <p className="text-base text-muted-foreground max-w-2xl mb-8">
-            {blogIntro}
-          </p>
-        </div>
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          {/* left column */}
-          {/* blog */}
-          <div className="flex flex-col gap-16">
-            {blogList.map((blog: BlogType) => (
-              <BlogCard key={blog.slug} blog={blog} titleAs='h3'/>
+          <ul
+            role="list"
+            className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3"
+          >
+            {awards.map((award) => (
+              <ActivityCard key={award.name} activity={award} titleAs='h3'/>
             ))}
-          </div>
-
-          {/* right column */}
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Career />
-            <Education />
-          </div>
+          </ul>
         </div>
       </Container>
     </>

@@ -36,15 +36,9 @@ function EducationItem({ educationItem }: { educationItem: EducationItemType }) 
 }
 
 export default function Education() {
-
-
   return (
     <div className="rounded-2xl border border-muted shadow-sm p-6">
-      <h2 className="flex text-sm font-semibold">
-        <Student size={24} weight="duotone" />
-        <span className="ml-3">Education</span>
-      </h2>
-      <ol className="mt-6 space-y-4">
+      <ol className="space-y-4">
         {educationList.map((educationItem, educationItemIndex) => (
           <EducationItem key={educationItemIndex} educationItem={educationItem} />
         ))}
