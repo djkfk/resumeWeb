@@ -47,6 +47,12 @@ export const projects: Array<ProjectItemType> = [
     link: { href: '', label: '' },
     tags: ['Spring Boot', 'MyBatis', 'MySQL', 'Redis', 'JWT', 'Nginx', 'Maven']
   },
+  {
+    name: '道可达自助售货机后台管理系统',
+    description: ' 是一个面向无人零售场景的企业级自助售货机全生命周期管理平台。系统基于成熟的开源框架 RuoYi-Vue 构建的一个前后端分离项目。技术栈：SpringBoot、MybatisPlus、MySQL、Redis、Maven、Vue 3、TypeScript、Vite、ElementPlus。主要工作：基于RuoYi框架快速完成商品管理、订单管理、设备管理等模块的前后端开发。',
+    link: { href: '', label: '' },
+    tags: ['Spring Boot', 'MyBatisPlus', 'MySQL', 'Redis', 'Vue3', 'ElementPlus', 'Vite']
+  },
 ]
 
 // Hobbies & Volunteer
